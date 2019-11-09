@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      body {
+        font-family: "Lato", sans-serif;
+        margin: 0;
+      }
+
+      .tablink {
+        background-color: #8e8d8a;
+        color: white;
+        float: left;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 14px 16px;
+        font-size: 17px;
+        width: 25%;
+      }
+
+      .tablink:hover {
+        background-color: #777;
+      }
+
+      /* Style the tab content */
+      .tabcontent {
+        color: black;
+        display: none;
+        padding: 50px;
+        text-align: center;
+      }
+
+      #London {
+        background-color: #eae7dc;
+      }
+      #Paris {
+        background-color: #d8c3a5;
+      }
+      #Tokyo {
+        background-color: #e98075;
+      }
+      #Oslo {
+        background-color: #e85a4f;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="London" class="tabcontent">
+      <h1>Acasa</h1>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+        venenatis, libero sed euismod accumsan, leo felis suscipit dui, a
+        blandit leo metus et mi. Phasellus.
+      </p>
+    </div>
+
+    <div id="Paris" class="tabcontent">
+      <h1>Biblioteca</h1>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+        venenatis, libero sed euismod accumsan, leo felis suscipit dui, a
+        blandit leo metus et mi. Phasellus.
+      </p>
+    </div>
+
+    <div id="Tokyo" class="tabcontent">
+      <h1>Recpmandari</h1>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+        venenatis, libero sed euismod accumsan, leo felis suscipit dui, a
+        blandit leo metus et mi. Phasellus.
+      </p>
+    </div>
+
+    <div id="Oslo" class="tabcontent">
+      <h1>Statistici</h1>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+        venenatis, libero sed euismod accumsan, leo felis suscipit dui, a
+        blandit leo metus et mi. Phasellus.
+      </p>
+    </div>
+
+    <button
+      class="tablink"
+      onclick="openCity('London', this, '#eae7dc')"
+      id="defaultOpen"
+    >
+      London
+    </button>
+    <button class="tablink" onclick="openCity('Paris', this, '#d8c3a5')">
+      Paris
+    </button>
+    <button class="tablink" onclick="openCity('Tokyo', this, '#e98075')">
+      Tokyo
+    </button>
+    <button class="tablink" onclick="openCity('Oslo', this, '#E85A4F')">
+      Oslo
+    </button>
+
+    <script>
+      function openCity(cityName, elmnt, color) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablink");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].style.backgroundColor = "";
+        }
+        document.getElementById(cityName).style.display = "block";
+        elmnt.style.backgroundColor = color;
+      }
+      // Get the element with id="defaultOpen" and click on it
+      document.getElementById("defaultOpen").click();
+    </script>
+  </body>
+</html>
